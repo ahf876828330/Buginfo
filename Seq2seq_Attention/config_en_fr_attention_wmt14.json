@@ -1,0 +1,44 @@
+{
+  "training": {
+    "optimizer": "adam",
+    "clip_c": 1,
+    "lrate": 0.15
+  },
+  "management": {
+    "monitor_loss": 1000,
+    "print_samples": 20000,
+    "checkpoint_freq": 5000
+  },
+  "data": {
+    "src": "/home/ahf/Bug_fix_info/data/train_output/new_buggy.txt",
+    "trg": "/home/ahf/Bug_fix_info/data/train_output/original_fix.txt",
+    "infotrg": "/home/ahf/Bug_fix_info/data/train_output/info.txt",
+    "test_src": "/home/ahf/Bug_fix_info/data/val_output/new_buggy.txt",
+    "test_trg": "/home/ahf/Bug_fix_info/data/val_output/original_fix.txt",
+    "test_infotrg": "/home/ahf/Bug_fix_info/data/val_output/info.txt",
+    "batch_size": 8,
+    "n_words_trg": 200000,
+    "valid_batch_size": 80,
+    "n_words_src": 200000,
+    "max_src_length": 200,
+    "max_trg_length": 200,
+    "task": "translation",
+    "save_dir": "/home/ahf/Bug_fix_info/model/save_path/buggy_line",
+    "load_dir": false
+  },
+  "model": {
+    "dim": 1000,
+    "dim_trg": 1000,
+    "use_dropout": false,
+    "dim_word_src": 500,
+    "n_words_src": 200000,
+    "n_words": 200000,
+    "dim_word_trg": 500,
+    "n_layers_src": 2,
+    "n_layers_trg": 1,
+    "bidirectional": true,
+    "decode": "greedy",
+    "seq2seq": "attention",
+    "optimizer": "adam"
+  }
+}
